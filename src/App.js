@@ -3,7 +3,7 @@ import Banner from './components/banner/Banner';
 
 function App() {
   return (
-    <>
+    <div className='bg-gray-100'>
       <Header />
 
       <main className='max-w-screen-2xl mx-auto'>
@@ -11,7 +11,7 @@ function App() {
       <Banner />
       {/* Product Feed */}
       </main>
-    </>
+    </div>
   );
 }
 
