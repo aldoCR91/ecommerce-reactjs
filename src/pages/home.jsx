@@ -1,9 +1,10 @@
-import Header from "./components/header/Header";
-import Banner from "./components/banner/Banner";
-import ProductFeed from "./components/productFeed/ProductFeed";
+import React from 'react'
+import Header from "../components/header/Header";
+import Banner from "../components/banner/Banner";
+import ProductFeed from "../components/productFeed/ProductFeed";
 //import data from './data';
 
-function App() {
+function Home() {
   return (
     <div className="bg-gray-100">
       <Header />
@@ -16,7 +17,7 @@ function App() {
         <ProductFeed />
       </main>
     </div>
-  );
+  )
 }
 
-export default App;
+export default Home
