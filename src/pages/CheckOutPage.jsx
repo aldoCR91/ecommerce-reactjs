@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import CheckOutProduct from '../components/checkOutProduct/CheckOutProduct';
 import Header from '../components/header/Header'
 
-function Checkout() {
+function CheckOutPage() {
 
   const [items, setItems] = useState([]);
 
@@ -29,9 +29,9 @@ function Checkout() {
             }
           </h1>
 
-          {items.map((item, i) => {
-            <CheckOutProduct />
-          })}
+          {items.map((item, i) => (
+            <CheckOutProduct setItems={setItems} item={item} key={i}/>
+          ))}
           
           
         </div>
@@ -43,4 +43,4 @@ function Checkout() {
   )
 }
 
-export default Checkout
+export default CheckOutPage;

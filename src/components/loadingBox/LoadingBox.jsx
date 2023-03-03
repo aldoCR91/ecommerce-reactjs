@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Login = () => {
+function LoadingBox() {
   return (
     <div>
-      <h1>Login</h1>
+      Loading...
     </div>
   )
 }
 
-export default Login
+export default LoadingBox

@@ -1,24 +1,37 @@
-import { createBrowserRouter } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom";
 
-import Checkout from "../pages/checkout"
-import Home from "../pages/home"
-import Login from "../pages/login";
-import Register from "../pages/register";
+import CheckOutPage from "../pages/CheckOutPage";
+import HomePage from "../pages/HomePage";
+import LoginPage from "../pages/LoginPage";
+import LogupPage from "../pages/LogupPage";
 
-const router = createBrowserRouter([
-  {
-    path: "/", element: <Home />
-  },
-  {
-    path: "/checkout", element: <Checkout />
-  },
-  {
-    path: "/login", element: <Login />
-  },
-  {
-    path: "/register", element: <Register />
-  },
+//import { createBrowserRouter } from "react-router-dom"
 
-]);
+export const AppRouter = () => {
+  const authStatus = "authenticated"; // 'authenticated'; // 'not-authenticated';
 
-export default router;
+  return (
+    <Routes>
+      {authStatus === "not-authenticated" ? 
+        {/*Rutas publicas */}
+      (
+        <>
+          <Route path="/auth/login" element={<LoginPage />} />
+          <Route path="/auth/logup" element={<LogupPage />} />
+          <Route path="/" element={<HomePage />} />
+        </>
+      ) 
+      :
+      {/*Rutas privadas */}
+      (
+        <>
+          <Route path="/checkout" element={<CheckOutPage />} />
+        </>
+      )}
+
+      <Route path="/*" element={<Navigate to="/" />} />
+
+    </Routes>
+  );
+};
+

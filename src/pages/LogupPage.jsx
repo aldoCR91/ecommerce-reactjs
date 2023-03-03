@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../components/header/Header'
 
-const Register = () => {
+const LogupPage = () => {
   return (
     <div>
         <Header />
@@ -10,4 +10,4 @@ const Register = () => {
   )
 }
 
-export default Register;
+export default LogupPage;
