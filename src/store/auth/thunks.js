@@ -2,10 +2,10 @@ import { loginWithEmailPassword, registerUserWithEmailPassword, singInWithGoogle
 import { checkingCredentials, logout, login } from './';
 
 export const checkingAuthentication = () => {
-    return async( dispatch ) => {
 
-        dispatch( checkingCredentials() );
+    return async( dispatch ) => {
         
+        dispatch( checkingCredentials() );
     }
 }
 

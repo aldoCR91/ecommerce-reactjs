@@ -5,8 +5,8 @@ import { useCheckAuth } from "../hooks/useCheckAuth";
 import { CheckingAuth } from "../components/checkingAuth/CheckingAuth";
 import CheckOutPage from "../pages/CheckOutPage";
 import HomePage from "../pages/HomePage";
-import LoginPage from "../pages/LoginPage";
-import LogupPage from "../pages/LogupPage";
+import {LoginPage} from "../pages/LoginPage";
+import {LogupPage} from "../pages/LogupPage";
 //import { useCheckAuth } from '../hooks';
 
 //import { createBrowserRouter } from "react-router-dom"
@@ -28,6 +28,7 @@ export const AppRouter = () => {
         ? (
             <>
               <Route path="/" element={<HomePage />} />
+              <Route path='/*' element={ <Navigate to='/' />  } />
             </>
           )  
           :
