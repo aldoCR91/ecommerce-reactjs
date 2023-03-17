@@ -13,7 +13,7 @@ import {LogupPage} from "../pages/LogupPage";
 
 export const AppRouter = () => {
 
-  const status = useCheckAuth();
+    const status = useCheckAuth();
   //const authStatus = "authenticated"; // 'authenticated'; // 'not-authenticated';
 
   if ( status === 'checking' ) {

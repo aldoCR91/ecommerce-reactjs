@@ -3,16 +3,15 @@ import logo from "./logo.png";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
-import { useCheckAuth } from "../../hooks";
+//import { useCheckAuth } from "../../hooks";
 import { useSelector } from "react-redux";
 
 
 function Header() {
 
-  const { status, displayName, errorMessage } = useSelector( state => state.auth );
-
-
+  const { status, displayName } = useSelector( state => state.auth );
 
   return (
     <header>
@@ -41,14 +40,21 @@ function Header() {
         </div>
         {/* Right */}
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div className="link">
-            {(status) 
-              ? (<p>{displayName}</p>)
-              :  (<p>Gest</p>)
-               
+            {
+              (status)
+                ? (<div className="link">
+                    <p>{displayName}</p>
+                    <p className="font-extrabold md:text-sm">Acoount & Lists</p>
+                   </div>
+                  )
+                : (<div className="link">
+                    
+                      <p><Link to={'/auth/login'}>{displayName}</Link></p>
+                      <p className="font-extrabold md:text-sm">Acoount & Lists</p>
+            
+                  </div>)
             }
-            <p className="font-extrabold md:text-sm">Acoount & Lists</p>
-          </div>
+          
           <div className="link">
             <p>Returns</p>
             <p className="font-extrabold md:text-sm">& Orders</p>
